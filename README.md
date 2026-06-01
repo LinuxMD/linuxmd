@@ -13,6 +13,10 @@ No
 
 ## Build instructions
 
+- Run `./buildtoolchain.sh` to build a toolchain. This uses buildroot but we do not build a root
+  filesystem with it. buildroot is the least painful way to get a m68k-linux toolchain that can
+  produce usable binaries for 68000.
+
 TODO
 
 ## Boot instructions
