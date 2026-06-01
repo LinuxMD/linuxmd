@@ -25,3 +25,11 @@ jobs:
       - name: Build toolchain
         run: |
           ./buildtoolchain.sh
+
+      - name: Build u-boot
+        run: |
+          ./builduboot.sh
+
+      - name: Build medtool
+        run: |
+          ./buildmedtool.sh
