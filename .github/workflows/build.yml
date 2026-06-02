@@ -33,3 +33,7 @@ jobs:
       - name: Build medtool
         run: |
           ./buildmedtool.sh
+
+      - name: Build linux
+        run: |
+          ./buildlinux.sh

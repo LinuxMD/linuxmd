@@ -7,3 +7,6 @@
 [submodule "medtool"]
 	path = medtool
 	url = https://github.com/LinuxMD/medtool.git
+[submodule "linux"]
+	path = linux
+	url = https://github.com/LinuxMD/linux.git

@@ -22,6 +22,8 @@ No
 
 - Run `./buildmedtool.sh` to build `medtool` to interact with the everdrive for serial console.
 
+- Run `./buildlinux.sh` to build the linux kernel image. (NOTE: at the moment this does not produce a workable image)
+
 TODO
 
 ## Boot instructions
