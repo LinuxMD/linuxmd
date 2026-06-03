@@ -41,3 +41,12 @@ jobs:
       - name: Build rootfs
         run: |
           ./buildrootfs.sh
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: linuxmd
+          path: |
+            u-boot/u-boot.bin
+            linux/vmlinux
+            smolutils/m68k.erofs
