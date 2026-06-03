@@ -20,7 +20,7 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential
+          sudo apt-get install -y build-essential meson libarchive-dev libcjson-dev libcap-dev
 
       - name: Build toolchain
         run: |
@@ -37,3 +37,7 @@ jobs:
       - name: Build linux
         run: |
           ./buildlinux.sh
+
+      - name: Build rootfs
+        run: |
+          ./buildrootfs.sh

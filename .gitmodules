@@ -10,3 +10,9 @@
 [submodule "linux"]
 	path = linux
 	url = https://github.com/LinuxMD/linux.git
+[submodule "smolutils"]
+	path = smolutils
+	url = https://github.com/LinuxMD/smolutils.git
+[submodule "tarwak"]
+	path = tarwak
+	url = https://github.com/LinuxMD/tarwak.git
