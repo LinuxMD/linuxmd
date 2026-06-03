@@ -67,6 +67,8 @@ Creating socket and waiting for connection (minicom -D unix#/tmp/medtool)
 
 - In the EverDrive menu select `u-boot.bin` hit a button, and then hit `start game`
 
+![everdrive_menu_uboot](doc_everdrive_start_uboot.jpg)
+
 - Wait a little while and you should see u-boot appear on in minicom:
 
 ```
