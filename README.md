@@ -12,6 +12,12 @@ No
 - USB cable between the EverDrive and your PC
 - Time to burn
 
+## Will this work on an emulator?
+
+Probably not, the emulator would need to emulate the EverDrive's special `SSF2` mapper that gives
+use 4MB of RAM and the EverDrive's protocol that allows the MegaDrive to load files from the SD
+card.
+
 ## Build instructions
 
 - Run `./buildtoolchain.sh` to build a toolchain. This uses buildroot but we do not build a root
@@ -30,7 +36,7 @@ TODO
 
 ## Boot instructions
 
-- Copy `u-boot.bin` (Add other files here later) to your EverDrive SD card
+- Copy `u-boot/u-boot.bin`, `linux/vmlinux.lz4`, `smolutils/m68k.erofs` to your EverDrive SD card
 
 - Power up the Megadrive
 
