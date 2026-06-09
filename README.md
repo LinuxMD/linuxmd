@@ -15,8 +15,8 @@ No
 ## Will this work on an emulator?
 
 Probably not, the emulator would need to emulate the EverDrive's special `SSF2` mapper that gives
-use 4MB of RAM and the EverDrive's protocol that allows the MegaDrive to load files from the SD
-card.
+use 4MB of RAM, the EverDrive's protocol that allows the MegaDrive to load files from the SD
+card and the timer register the EverDrive provides.
 
 ## Build instructions
 
