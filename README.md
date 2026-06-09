@@ -92,22 +92,35 @@ b
 c
 
 
-U-Boot 2026.01-00647-g39f62d87171b-dirty (Feb 14 2026 - 16:46:36 +0900)
+U-Boot 2026.01-00661-gc899199e221c-dirty (Jun 09 2026 - 21:18:13 +0900)
 
-DRAM:  3 MiB
-SR is 0x2710
-copy from 00000000 to 002d9000, 0x265d0 bytes (reloc_off 0x002d9000)
-copied from 00000000 to 002d9000, 0x265d0 bytes (reloc_off 0x002d9000)
-clearing new bss from 002fd000 to 002ff5d0
+DRAM:  3.8 MiB
+SR is 0x2700
+copy from 00000000 to 0039a000, 0x25f70 bytes (reloc_off 0x0039a000)
+copied from 00000000 to 0039a000, 0x25f70 bytes (reloc_off 0x0039a000)
+clearing new bss from 003bd000 to 003bff70
 Doing relocation 
-Relocation point of no return, new SP 0x00197a30, jump to 0x002e1b1a
-Core:  4 devices, 4 uclasses, devicetree: embed
+Relocation point of no return, new SP 0x00338990, jump to 0x003a2184
+Core:  5 devices, 5 uclasses, devicetree: embed
 Loading Environment from NVRAM... *** Warning - bad CRC, using default environment
 
 In:    serial
 Out:   serial,vidconsole
 Err:   serial
-=> 
+Hit any key to stop autoboot: 0
+status; 0xa500
+status; 0xa500
+Loading vmlinux.lz4, 771594 bytes
+status; 0xa500
+Done
+Uncompressed size: 1336992 = 0x1466A0
+ELF overwrites reserved memory: 0x00000400 -> 0x00103170: -22
+ELF overwrites reserved memory: 0x0011f76c -> 0x0011f77c: -22
+ELF overwrites reserved memory: 0x0011fa80 -> 0x0011fad4: -22
+ELF overwrites reserved memory: 0x001438b4 -> 0x0014628c: -22
+new fdt 0033b1d0
 ``` 
+
+Loading and decompressing the kernel will take some time. Wait!
 
 TODO
