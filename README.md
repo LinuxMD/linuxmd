@@ -92,7 +92,7 @@ b
 c
 
 
-U-Boot 2026.01-00661-gc899199e221c-dirty (Jun 09 2026 - 21:18:13 +0900)
+U-Boot 2026.01-00663-g58351542bd04-dirty (Jun 09 2026 - 21:45:36 +0900)
 
 DRAM:  3.8 MiB
 SR is 0x2700
@@ -110,15 +110,43 @@ Err:   serial
 Hit any key to stop autoboot: 0
 status; 0xa500
 status; 0xa500
-Loading vmlinux.lz4, 771594 bytes
+Loading vmlinux.lz4, 772901 bytes
 status; 0xa500
 Done
-Uncompressed size: 1336992 = 0x1466A0
-ELF overwrites reserved memory: 0x00000400 -> 0x00103170: -22
-ELF overwrites reserved memory: 0x0011f76c -> 0x0011f77c: -22
-ELF overwrites reserved memory: 0x0011fa80 -> 0x0011fad4: -22
-ELF overwrites reserved memory: 0x001438b4 -> 0x0014628c: -22
+Uncompressed size: 1337124 = 0x146724
+ELF overwrites reserved memory: 0x00000400 -> 0x00103860: -22
+ELF overwrites reserved memory: 0x0011f808 -> 0x0011f810: -22
+ELF overwrites reserved memory: 0x0011f810 -> 0x0011f81c: -22
+ELF overwrites reserved memory: 0x0011f81c -> 0x0011f82c: -22
+ELF overwrites reserved memory: 0x0011f82c -> 0x0011f83c: -22
+ELF overwrites reserved memory: 0x0011f83c -> 0x0011f84c: -22
+ELF overwrites reserved memory: 0x0011f84c -> 0x0011f85c: -22
+ELF overwrites reserved memory: 0x00134000 -> 0x00143928: -22
 new fdt 0033b1d0
+L
+s
+K[    0.000000] Linux version 7.1.0-rc6-00187-g59679e53ee8a-dirty (daniel@kinako) (m68k-linux-gcc.br_real (Buildroot -gdb75a8eea0bd) 15.2.0, GNU ld (GNU Binutils) 2.46.0.20260210) #16 Tue Jun  9 22:43:03 JST 2026
+[    0.000000] printk: legacy bootconsole [debug0] enabled
+[    0.000000] Flat model support (C) 1998,1999 Kenneth Albanowski, D. Jeff Dionne
+[    0.000000] Generic DT Machine (C) 2024 Daniel Palmer <daniel@thingy.jp>
+[    0.000000] OF: reserved mem: Reserved memory: No reserved-memory node in the DT
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000000000000-0x00000000003fffff]
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000000000000-0x00000000003fffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x00000000003fffff]
+[    0.000000] Kernel command line: earlyprintk
+[    0.000000] Unknown kernel command line parameters "earlyprintk", will be passed to user space.
+[    0.000000] printk: log buffer data + meta data: 8192 + 25600 = 33792 bytes
+[    0.000000] Dentry cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.000000] Built 1 zonelists, mobility grouping off.  Total pages: 1024
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] SLUB: HWalign=16, Order=0-1, MinObjects=0, CPUs=1, Nodes=1
+[    0.000000] NR_IRQS: 32
+[    0.000000] timer_probe: no matching timers found
 ``` 
 
 Loading and decompressing the kernel will take some time. Wait!
