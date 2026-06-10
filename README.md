@@ -28,7 +28,7 @@ card and the timer register the EverDrive provides.
 
 - Run `./buildmedtool.sh` to build `medtool` to interact with the everdrive for serial console.
 
-- Run `./buildlinux.sh` to build the linux kernel image. (NOTE: at the moment this does not produce a workable image).
+- Run `./buildlinux.sh` to build the linux kernel image.
 
 - Run `./buildrootfs.sh` to build the rootfs erofs image.
 
@@ -92,7 +92,7 @@ b
 c
 
 
-U-Boot 2026.01-00663-g58351542bd04-dirty (Jun 09 2026 - 21:45:36 +0900)
+U-Boot 2026.01-00664-g7f9772687297-dirty (Jun 10 2026 - 22:20:36 +0900)
 
 DRAM:  3.8 MiB
 SR is 0x2700
@@ -100,7 +100,7 @@ copy from 00000000 to 0039a000, 0x25f70 bytes (reloc_off 0x0039a000)
 copied from 00000000 to 0039a000, 0x25f70 bytes (reloc_off 0x0039a000)
 clearing new bss from 003bd000 to 003bff70
 Doing relocation 
-Relocation point of no return, new SP 0x00338990, jump to 0x003a2184
+Relocation point of no return, new SP 0x00338930, jump to 0x003a2184
 Core:  5 devices, 5 uclasses, devicetree: embed
 Loading Environment from NVRAM... *** Warning - bad CRC, using default environment
 
@@ -110,22 +110,19 @@ Err:   serial
 Hit any key to stop autoboot: 0
 status; 0xa500
 status; 0xa500
-Loading vmlinux.lz4, 772901 bytes
+Loading vmlinux.lz4, 782988 bytes
 status; 0xa500
 Done
-Uncompressed size: 1337124 = 0x146724
-ELF overwrites reserved memory: 0x00000400 -> 0x00103860: -22
-ELF overwrites reserved memory: 0x0011f808 -> 0x0011f810: -22
-ELF overwrites reserved memory: 0x0011f810 -> 0x0011f81c: -22
-ELF overwrites reserved memory: 0x0011f81c -> 0x0011f82c: -22
-ELF overwrites reserved memory: 0x0011f82c -> 0x0011f83c: -22
-ELF overwrites reserved memory: 0x0011f83c -> 0x0011f84c: -22
-ELF overwrites reserved memory: 0x0011f84c -> 0x0011f85c: -22
-ELF overwrites reserved memory: 0x00134000 -> 0x00143928: -22
+Uncompressed size: 1359592 = 0x14BEE8
+ELF overwrites reserved memory: 0x00000400 -> 0x00105140: -22
+ELF overwrites reserved memory: 0x0012214c -> 0x0012215c: -22
+ELF overwrites reserved memory: 0x0012215c -> 0x00122440: -22
+ELF overwrites reserved memory: 0x00138000 -> 0x00148c8a: -22
+ELF overwrites reserved memory: 0x00148c8c -> 0x0014bad4: -22
 new fdt 0033b1d0
 L
 s
-K[    0.000000] Linux version 7.1.0-rc6-00187-g59679e53ee8a-dirty (daniel@kinako) (m68k-linux-gcc.br_real (Buildroot -gdb75a8eea0bd) 15.2.0, GNU ld (GNU Binutils) 2.46.0.20260210) #16 Tue Jun  9 22:43:03 JST 2026
+K[    0.000000] Linux version 7.1.0-rc6-00193-g468b07346478-dirty (daniel@kinako) (m68k-linux-gcc.br_real (Buildroot -gdb75a8eea0bd) 15.2.0, GNU ld (GNU Binutils) 2.46.0.20260210) #45 Wed Jun 10 22:25:26 JST 2026
 [    0.000000] printk: legacy bootconsole [debug0] enabled
 [    0.000000] Flat model support (C) 1998,1999 Kenneth Albanowski, D. Jeff Dionne
 [    0.000000] Generic DT Machine (C) 2024 Daniel Palmer <daniel@thingy.jp>
@@ -146,8 +143,40 @@ K[    0.000000] Linux version 7.1.0-rc6-00187-g59679e53ee8a-dirty (daniel@kinako
 [    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
 [    0.000000] SLUB: HWalign=16, Order=0-1, MinObjects=0, CPUs=1, Nodes=1
 [    0.000000] NR_IRQS: 32
-[    0.000000] timer_probe: no matching timers found
-``` 
+[    0.000000] Enabling VDP ints..
+[    0.000000] Enabled VDP ints..
+[    0.020000] Calibrating delay loop... 1.19 BogoMIPS (lpj=5952)
+[    0.170000] pid_max: default: 4096 minimum: 301
+[    0.250000] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.270000] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+[    0.360000] VFS: Finished mounting rootfs on nullfs
+[    1.630000] Memory: 2432K/4096K available (1043K kernel code, 87K rwdata, 116K rodata, 80K init, 36K bss, 1456K reserved, 0K cma-reserved)
+[    2.130000] devtmpfs: initialized
+[    2.950000] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    3.000000] futex hash table entries: 16 (256 bytes on 1 NUMA nodes, total 0 KiB, linear).
+[    8.070000] workingset: timestamp_bits=30 (anon: 26) max_order=10 bucket_order=0 (anon: 0)
+[   29.550000] watchdog: BUG: soft lockup - CPU#0 stuck for 22s! [kworker/u4:0:7]
+[   29.550000] Format 08  Vector: 0e33  PC: 0000ffff  Status: 0000    Not tainted
+[   29.550000] ORIG_D0: 003c7e40  D0: 00030122  A2: 003c7e1c  A1: 00989680
+[   29.550000] A0: 00000000  D5: 00000b8a  D4: 00000000
+[   29.550000] D3: 003c7e88  D2: 00170d20  D1: 003c6000
+[   29.550000] USP: 00000000
+[   53.550000] watchdog: BUG: soft lockup - CPU#0 stuck for 44s! [kthreadd:2]
+[   53.550000] Format 00  Vector: 0078  PC: 0001ffec  Status: 2004    Tainted: G             L     
+[   53.550000] ORIG_D0: ffffffff  D0: 00000000  A2: 00170a00  A1: 00332500
+[   53.550000] A0: 00000000  D5: 00339f00  D4: ffffffff
+[   53.550000] D3: 0012ade0  D2: 00000000  D1: 00170a00
+[   61.930000] BUG: workqueue lockup - pool cpus=0 node=0 flags=0x0 nice=0 stuck for 52s!
+[   62.020000] Showing busy workqueues and worker pools:
+[   62.050000] workqueue events: flags=0x100
+[   62.080000]   pwq 2: cpus=0 node=0 flags=0x0 nice=0 active=1 refcnt=2
+[   62.080000]     pending: 0x0004b24e
+[   62.120000] workqueue async: flags=0x2
+[   62.150000]   pwq 4: cpus=0 flags=0x4 nice=0 active=1 refcnt=2
+[   62.150000]     in-flight: 7:0x0001df1e for 53s
+[   62.170000] pool 4: cpus=0 flags=0x4 nice=0 hung=0s workers=2 idle: 16
+[   62.220000] Showing backtraces of busy workers in stalled worker pools:
+```
 
 Loading and decompressing the kernel will take some time. Wait!
 
