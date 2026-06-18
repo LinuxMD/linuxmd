@@ -16,3 +16,6 @@
 [submodule "tarwak"]
 	path = tarwak
 	url = https://github.com/LinuxMD/tarwak.git
+[submodule "qemu"]
+	path = qemu
+	url = https://github.com/fifteenhex/qemu.git

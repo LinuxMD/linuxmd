@@ -92,15 +92,15 @@ b
 c
 
 
-U-Boot 2026.01-00665-ga72b247a95c4-dirty (Jun 10 2026 - 23:16:28 +0900)
+U-Boot 2026.01-00673-g32ab0871de57 (Jun 18 2026 - 18:11:22 +0900)
 
 DRAM:  3.8 MiB
 SR is 0x2700
-copy from 00000000 to 0039a000, 0x25f70 bytes (reloc_off 0x0039a000)
-copied from 00000000 to 0039a000, 0x25f70 bytes (reloc_off 0x0039a000)
+copy from 00000000 to 00398000, 0x27f70 bytes (reloc_off 0x00398000)
+copied from 00000000 to 00398000, 0x27f70 bytes (reloc_off 0x00398000)
 clearing new bss from 003bd000 to 003bff70
 Doing relocation 
-Relocation point of no return, new SP 0x003388f0, jump to 0x003a2184
+Relocation point of no return, new SP 0x003368d0, jump to 0x003a0370
 Core:  5 devices, 5 uclasses, devicetree: embed
 Loading Environment from NVRAM... *** Warning - bad CRC, using default environment
 
@@ -110,76 +110,59 @@ Err:   serial
 Hit any key to stop autoboot: 0
 status; 0xa500
 status; 0xa500
-Loading vmlinux.lz4, 722392 bytes
+Loading vmlinux.lz4, 738513 bytes
 status; 0xa500
 Done
-status; 0xa500
-Loading m68k.erofs, 90112 bytes
-status; 0xa500
-Done
-Uncompressed size: 1244884 = 0x12FED4
-ELF overwrites reserved memory: 0x00000400 -> 0x000f2c60: -22
-ELF overwrites reserved memory: 0x000f3000 -> 0x0010bf50: -22
-ELF overwrites reserved memory: 0x0010bf50 -> 0x0010bf58: -22
-ELF overwrites reserved memory: 0x0010bf58 -> 0x0010bf64: -22
-ELF overwrites reserved memory: 0x0010bf64 -> 0x0010bf74: -22
-ELF overwrites reserved memory: 0x0010bf74 -> 0x0010bf84: -22
-ELF overwrites reserved memory: 0x0010bf84 -> 0x0010bf94: -22
-ELF overwrites reserved memory: 0x0010bf94 -> 0x0010bfa4: -22
-ELF overwrites reserved memory: 0x0010bfa4 -> 0x0010c210: -22
-ELF overwrites reserved memory: 0x0010c210 -> 0x0010c264: -22
-ELF overwrites reserved memory: 0x0010d000 -> 0x0011d7e0: -22
-ELF overwrites reserved memory: 0x0011e000 -> 0x0012d1a2: -22
-ELF overwrites reserved memory: 0x0012d1a4 -> 0x0012fac0: -22
-ELF overwrites reserved memory: 0x00130000 -> 0x0013735d: -22
-new fdt 0033b1e8
+Uncompressed size: 1266268 = 0x13525C
+ELF overwrites reserved memory: 0x00000000 -> 0x000f7b10: -22
+new fdt 00339248
 L
 s
-K[    0.000000] Linux version 7.1.0-rc6-00197-g21fa92d7c57d-dirty (daniel@kinako) (m68k-linux-gcc.br_real (Buildroot -gdb75a8eea0bd) 15.2.0, GNU ld (GNU Binutils) 2.46.0.20260210) #61 Thu Jun 11 00:50:10 JST 2026
-[    0.000000] printk: legacy bootconsole [debug0] enabled
-[    0.000000] Flat model support (C) 1998,1999 Kenneth Albanowski, D. Jeff Dionne
-[    0.000000] Generic DT Machine (C) 2024 Daniel Palmer <daniel@thingy.jp>
-[    0.000000] OF: reserved mem: Reserved memory: No reserved-memory node in the DT
-[    0.000000] Zone ranges:
-[    0.000000]   DMA      [mem 0x0000000000000000-0x00000000003fffff]
-[    0.000000]   Normal   empty
-[    0.000000] Movable zone start for each node
-[    0.000000] Early memory node ranges
-[    0.000000]   node   0: [mem 0x0000000000000000-0x00000000003fffff]
-[    0.000000] Initmem setup node 0 [mem 0x0000000000000000-0x00000000003fffff]
-[    0.000000] Kernel command line: earlyprintk root=/dev/ram
-[    0.000000] Unknown kernel command line parameters "earlyprintk", will be passed to user space.
-[    0.000000] printk: log buffer data + meta data: 4096 + 8704 = 12800 bytes
-[    0.000000] Dentry cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
-[    0.000000] Inode-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
-[    0.000000] Built 1 zonelists, mobility grouping off.  Total pages: 1024
-[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
-[    0.000000] SLUB: HWalign=16, Order=0-1, MinObjects=0, CPUs=1, Nodes=1
-[    0.000000] NR_IRQS: 32
-[    0.000000] Enabling VDP ints..
-[    0.000000] Enabled VDP ints..
-[    0.020000] Calibrating delay loop... 1.19 BogoMIPS (lpj=5952)
-[    0.170000] pid_max: default: 4096 minimum: 301
-[    0.250000] Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
-[    0.270000] Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
-[    0.360000] VFS: Finished mounting rootfs on nullfs
-[    1.720000] Memory: 2552K/4096K available (970K kernel code, 66K rwdata, 104K rodata, 72K init, 28K bss, 1336K reserved, 0K cma-reserved)
-[    2.240000] devtmpfs: initialized
-[    3.070000] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
-[    6.890000] workingset: timestamp_bits=30 (anon: 26) max_order=10 bucket_order=0 (anon: 0)
-[    7.800000] megadrive_vdp_probe:31
-[    7.870000] megadrive-vdp c00000.vdp: registered IRQ 3
-[   10.770000] Warning: unable to open an initial console.
-[   10.960000] /dev/root: Can't open blockdev
-[   11.010000] VFS: Cannot open root device "/dev/ram" or unknown-block(1,0): error -6
-[   11.040000] Please append a correct "root=" boot option; here are the available partitions:
-[   11.070000] List of all bdev filesystems:
-[   11.090000]  erofs
-[   11.100000] 
-[   11.140000] Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(1,0)
-[   11.140000] ---[ end Kernel panic - not syncing: VFS: Unable to mount root fs on unknown-block(1,0) ]---
+KLinux version 7.1.0-rc6-00209-gfdd510718e7e (daniel@kinako) (m68k-linux-gcc.br_real (Buildroot -gdb75a8eea0bd) 15.2.0, GNU ld (GNU Binutils) 2.46.0.20260210) #172 Thu Jun 18 18:10:11 JST 2026
+printk: legacy bootconsole [debug0] enabled
+Flat model support (C) 1998,1999 Kenneth Albanowski, D. Jeff Dionne
+Generic DT Machine (C) 2024 Daniel Palmer <daniel@thingy.jp>
+OF: reserved mem: Reserved memory: No reserved-memory node in the DT
+Zone ranges:
+  DMA      [mem 0x0000000000000000-0x00000000003fffff]
+  Normal   empty
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x0000000000000000-0x00000000003fffff]
+Initmem setup node 0 [mem 0x0000000000000000-0x00000000003fffff]
+Kernel command line: earlyprintk console=ttyVDP0 console=ttyED0 root=/dev/edblk -- smolinit.getty=/dev/ttyED0 smolinit.hostname=md
+Unknown kernel command line parameters "earlyprintk", will be passed to user space.
+printk: log buffer data + meta data: 4096 + 8704 = 12800 bytes
+Dentry cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Inode-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Built 1 zonelists, mobility grouping off.  Total pages: 1024
+mem auto-init: stack:off, heap alloc:off, heap free:off
+SLUB: HWalign=16, Order=0-1, MinObjects=0, CPUs=1, Nodes=1
+NR_IRQS: 32
+Calibrating delay loop... 1.20 BogoMIPS (lpj=6016)
+pid_max: default: 4096 minimum: 301
+Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
+VFS: Finished mounting rootfs on nullfs
+Memory: 2532K/4096K available (989K kernel code, 63K rwdata, 108K rodata, 72K init, 28K bss, 1356K reserved, 0K cma-reserved)
+devtmpfs: initialized
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+workingset: timestamp_bits=30 (anon: 26) max_order=10 bucket_order=0 (anon: 0)
+printk: legacy console [ttyVDP0] enabled
+printk: legacy console [ttyED0] enabled
+printk: legacy console [ttyED0] enabled
+printk: legacy bootconsole [debug0] disabled
+printk: legacy bootconsole [debug0] disabled
+everdrive-blk everdrive-blk@0: Everdrive blk created for m68k.erofs, size is 90112
+erofs (device edblk): mounted with root inode @ nid 36.
+VFS: Mounted root (erofs filesystem) readonly on device 259:0.
+devtmpfs: mounted
+VFS: Pivoted into new rootfs
+Freeing unused kernel image (initmem) memory: 72K
+This architecture does not have kernel memory protection.
+Run /sbin/init as init process
+....
 ```
 
 Loading and decompressing the kernel will take some time. Wait!
 
-TODO
