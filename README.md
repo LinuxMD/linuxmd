@@ -15,11 +15,12 @@ No
 ## Will this work on a (normal) emulator?
 
 Probably not, the emulator would need to emulate the EverDrive's special `SSF2` mapper that gives
-use 4MB of RAM, the EverDrive's protocol that allows the MegaDrive to load files from the SD
+us 4MB of RAM, the EverDrive's protocol that allows the MegaDrive to load files from the SD
 card and the timer register the EverDrive provides.
 
 A QEMU fork that emulates enough of the MegaDrive and the EverDrive to play with this without
-the real hardware is included.
+the real hardware is included. Note that this doesn't really emulate the feel of the real thing,
+QEMU emulates the CPU way too fast.
 
 ## Build instructions
 
@@ -168,4 +169,10 @@ Run /sbin/init as init process
 ```
 
 Loading and decompressing the kernel will take some time. Wait!
+At the moment on the real hardware something gets stuck in a loop somewhere and getting booted can (will) take a long time.
 
+## But what's the point if its just over serial anyone can do that?
+
+![vdpconsole](vdpconsole.png)
+
+Prize for someone that can workout a nice 32x32 16 colour tux or logo to go where the blue box is.
