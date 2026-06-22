@@ -42,6 +42,10 @@ jobs:
         run: |
           ./buildrootfs.sh
 
+      - name: Build qemu
+        run: |
+          ./buildqemu.sh
+
       - name: Upload Build Artifacts
         uses: actions/upload-artifact@v4
         with:
