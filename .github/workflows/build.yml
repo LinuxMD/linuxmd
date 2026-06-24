@@ -52,5 +52,5 @@ jobs:
           name: linuxmd
           path: |
             u-boot/u-boot.bin
-            linux/vmlinux
+            linux/vmlinux.lz4
             smolutils/m68k.erofs
