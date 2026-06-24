@@ -36,7 +36,11 @@ QEMU emulates the CPU way too fast.
 
 - Run `./buildrootfs.sh` to build the rootfs erofs image.
 
-TODO
+### For the emulated version
+
+- Run `./buildqemu.sh` to build QEMU
+
+- Run `./runqemu.sh` to run QEMU and boot.
 
 ## Boot instructions
 
@@ -96,7 +100,7 @@ b
 c
 
 
-U-Boot 2026.01-00673-g32ab0871de57 (Jun 18 2026 - 18:11:22 +0900)
+U-Boot 2026.01-00675-g9da66c43e96b-dirty (Jun 24 2026 - 20:10:31 +0900)
 
 DRAM:  3.8 MiB
 SR is 0x2700
@@ -114,16 +118,15 @@ Err:   serial
 Hit any key to stop autoboot: 0
 status; 0xa500
 status; 0xa500
-Loading vmlinux.lz4, 738513 bytes
+Loading vmlinux.lz4, 744178 bytes
 status; 0xa500
 Done
-Uncompressed size: 1266268 = 0x13525C
-ELF overwrites reserved memory: 0x00000000 -> 0x000f7b10: -22
-new fdt 00339248
+Uncompressed size: 1270696 = 0x1363A8
+ELF overwrites reserved memory: 0x00000000 -> 0x0013ff35: -22
+new fdt 003392a8
 L
 s
-KLinux version 7.1.0-rc6-00209-gfdd510718e7e (daniel@kinako) (m68k-linux-gcc.br_real (Buildroot -gdb75a8eea0bd) 15.2.0, GNU ld (GNU Binutils) 2.46.0.20260210) #172 Thu Jun 18 18:10:11 JST 2026
-printk: legacy bootconsole [debug0] enabled
+KLinux version 7.1.0-rc6-00250-g29f5b5b8fc12-dirty (daniel@kinako) (m68k-linux-gcc.br_real (Buildroot -gdb75a8eea0bd) 15.2.0, GNU ld (GNU Binutils) 2.46.0.20260210) #374 Wed Jun 24 22:12:37 JST 2026
 Flat model support (C) 1998,1999 Kenneth Albanowski, D. Jeff Dionne
 Generic DT Machine (C) 2024 Daniel Palmer <daniel@thingy.jp>
 OF: reserved mem: Reserved memory: No reserved-memory node in the DT
@@ -134,29 +137,31 @@ Movable zone start for each node
 Early memory node ranges
   node   0: [mem 0x0000000000000000-0x00000000003fffff]
 Initmem setup node 0 [mem 0x0000000000000000-0x00000000003fffff]
-Kernel command line: earlyprintk console=ttyVDP0 console=ttyED0 root=/dev/edblk -- smolinit.getty=/dev/ttyED0 smolinit.hostname=md
-Unknown kernel command line parameters "earlyprintk", will be passed to user space.
+Kernel command line: console=ttyVDP0 console=ttyED0 root=/dev/edblk -- smolinit.getty=/dev/ttyED0 smolinit.getty=/dev/ttyVDP0 smolinit.hostname=md
 printk: log buffer data + meta data: 4096 + 8704 = 12800 bytes
 Dentry cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
 Inode-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
 Built 1 zonelists, mobility grouping off.  Total pages: 1024
-mem auto-init: stack:off, heap alloc:off, heap free:off
+mem auto-init: stack:all(zero), heap alloc:off, heap free:off
 SLUB: HWalign=16, Order=0-1, MinObjects=0, CPUs=1, Nodes=1
 NR_IRQS: 32
-Calibrating delay loop... 1.20 BogoMIPS (lpj=6016)
+clocksource: everdrive-timer: mask: 0xffff max_cycles: 0xffff, max_idle_ns: 29163075000 ns
+printk: console [ttyVDP0] enabled
+printk: console [ttyED0] enabled
+Calibrating delay loop... 0.72 BogoMIPS (lpj=5984)
 pid_max: default: 4096 minimum: 301
 Mount-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
 Mountpoint-cache hash table entries: 1024 (order: 0, 4096 bytes, linear)
 VFS: Finished mounting rootfs on nullfs
-Memory: 2532K/4096K available (989K kernel code, 63K rwdata, 108K rodata, 72K init, 28K bss, 1356K reserved, 0K cma-reserved)
+everdrive fifo thread started
+Memory: 2532K/4096K available (1002K kernel code, 54K rwdata, 108K rodata, 72K init, 39K bss, 1368K reserved, 0K cma-reserved)
 devtmpfs: initialized
-clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 31854341414376613 ns
+clocksource: Switched to clocksource everdrive-timer
 workingset: timestamp_bits=30 (anon: 26) max_order=10 bucket_order=0 (anon: 0)
-printk: legacy console [ttyVDP0] enabled
-printk: legacy console [ttyED0] enabled
-printk: legacy console [ttyED0] enabled
-printk: legacy bootconsole [debug0] disabled
-printk: legacy bootconsole [debug0] disabled
+status 0xa500
+status 0xa500
+status 0xa500
 everdrive-blk everdrive-blk@0: Everdrive blk created for m68k.erofs, size is 90112
 erofs (device edblk): mounted with root inode @ nid 36.
 VFS: Mounted root (erofs filesystem) readonly on device 259:0.
@@ -165,11 +170,69 @@ VFS: Pivoted into new rootfs
 Freeing unused kernel image (initmem) memory: 72K
 This architecture does not have kernel memory protection.
 Run /sbin/init as init process
-....
+smolutils init (Jun 20 2026, 22:01:47)
+cmdline args:
+smolinit.getty=/dev/ttyED0
+Will start getty on TTY /dev/ttyED0
+smolinit.getty=/dev/ttyVDP0
+Will start getty on TTY /dev/ttyVDP0
+smolinit.hostname=md
+Hostname will be md
+environment variables
+HOME=/
+TERM=linux
+mounting filesystems...
+mounted sysfs(sysfs) on /sys
+mounted proc(proc) on /proc
+mounted tmp(tmpfs) on /tmp
+mounted run(tmpfs) on /run
+Starting getty on /dev/ttyED0 with shell /bin/smolsh
+Starting getty on /dev/ttyVDP0 with shell /bin/smolsh
+smolsh / > ls -l
+random: crng init done
+dr-xr-xr-x     2      root      root        447 bin
+drwxr-xr-x     2      root      root          0 dev
+dr-xr-xr-x    61      root      root          0 proc
+drwxr-xr-x     2      root      root          0 run
+dr-x------     2      root      root        112 sbin
+dr-xr-xr-x    11      root      root          0 sys
+drwxr-xr-x     2      root      root          0 tmp
+smolsh / > ps
+USER            PID             CMD
+root            1               init
+root            2               kthreadd
+root            3               pool_workqueue_release
+root            4               kworker/R-slub_flushwq
+root            5               kworker/0:0-events
+root            8               kworker/R-mm_percpu_wq
+root            9               everdrive_fifo
+root            10              ksoftirqd/0
+root            11              pr/ttyED0
+root            12              pr/ttyVDP0
+root            13              kworker/0:1
+root            14              kdevtmpfs
+root            15              kworker/R-writeback
+root            16              kworker/R-kblockd
+root            17              kswapd0
+root            18              kworker/u5:0
+root            19              kworker/u4:1-ttyED-ttyED
+root            20              kworker/u4:2-ttyED-ttyED
+root            21              kworker/0:1H-kblockd
+root            24              getty
+root            25              getty
+root            26              smolsh
+root            27              smolsh
+root            29              kworker/u4:3-ttyED-ttyED
+root            30              ps
+root            31              kworker/0:0H
+root            32              kworker/u4:0-ttyED-ttyED
+smolsh / >
 ```
 
 Loading and decompressing the kernel will take some time. Wait!
-At the moment on the real hardware something gets stuck in a loop somewhere and getting booted can (will) take a long time.
+
+Not that is insanely slow right now. A 12MHz 68000 system I have is way more usable that the megadrive
+is right now. This needs a bit of optimization. Interacting with the EverDrive fifo is pretty slow.
 
 ## But what's the point if its just over serial anyone can do that?
 
