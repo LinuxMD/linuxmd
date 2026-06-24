@@ -231,10 +231,12 @@ smolsh / >
 
 Loading and decompressing the kernel will take some time. Wait!
 
-Not that is insanely slow right now. A 12MHz 68000 system I have is way more usable that the megadrive
+Not that is insanely slow right now. A 12MHz 68000 system I have is way more usable than the megadrive
 is right now. This needs a bit of optimization. Interacting with the EverDrive fifo is pretty slow.
 
 ## But what's the point if its just over serial anyone can do that?
+
+Well, there is a fancy console using the MegaDrive's video output. It even has nice scrolling..
 
 ![vdpconsole](vdpconsole.png)
 
