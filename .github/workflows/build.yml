@@ -20,7 +20,7 @@ jobs:
       - name: Install build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential erofs-utils meson libarchive-dev libcjson-dev libcap-dev libglib2.0-dev
+          sudo apt-get install -y build-essential erofs-utils meson libarchive-dev libcjson-dev libcap-dev libglib2.0-dev libsdl2-dev
 
       - name: Build toolchain
         run: |
