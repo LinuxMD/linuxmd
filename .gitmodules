@@ -19,3 +19,6 @@
 [submodule "qemu"]
 	path = qemu
 	url = https://github.com/fifteenhex/qemu.git
+[submodule "png2tile"]
+	path = png2tile
+	url = https://github.com/yuv422/png2tile.git
