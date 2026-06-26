@@ -240,4 +240,5 @@ Well, there is a fancy console using the MegaDrive's video output. It even has n
 
 ![vdpconsole](vdpconsole.png)
 
-Prize for someone that can workout a nice 32x32 16 colour tux or logo to go where the blue box is.
+- In the top right corner there is a green box, that is the "heartbeat" and will flash to show the kernel is running.
+- There is also a red box under the green one, that is a disk activity indicator.
